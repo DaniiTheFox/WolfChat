@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { margin: 0; padding-bottom: 3rem; font-family: cursive; background-color: #00000033; }
+  
+        #form { background: rgba(0, 0, 0, 0.15); padding: 0.25rem; position: fixed; bottom: 0; left: 0; right: 0; display: flex; height: 3rem; box-sizing: border-box; backdrop-filter: blur(10px); }
+        #input { border: none; padding: 0 1rem; flex-grow: 1; border-radius: 2rem; margin: 0.25rem; }
+        #input:focus { outline: none; }
+        #form > button { background: #333; border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff; }
+  
+        #messages { list-style-type: none; margin: 0; padding: 0; }
+        #messages > li { padding: 0.5rem 1rem; }
+        #messages > li:nth-child(odd) { background: #20202044; }
+
+        #messages { color: #ffffff; }
+
+        input {color: #ffffff; background-color: #000000aa;}
+      </style>
+
+      <!--Scoket.io-->
+	<script src="public/js/socket.io.js"></script>
+</head>
+<body>
+ <!-- h1>CHAT WINDOW GOES HERE STILL INDEV</h1-->
+ <ul id="messages"></ul>
+ <form id="form" action="">
+    <input id="input" autocomplete="off" /><button>Send</button>
+ </form>
+
+ <script>
+    function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for(let i = 0; i <ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    function romveFunction(inputString) {
+    return inputString.replace(/./g, char => {
+        if (/[a-zA-Z0-9 :]/.test(char)) {
+            return char;
+        }
+        return '';
+    });
+   }
+
+    var socket = io();
+
+    var form = document.getElementById('form');
+    var input = document.getElementById('input');
+
+    var uname = getCookie("username");
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (input.value) {
+            uname = getCookie("username");
+            input.value = "{" + uname + "}: " + input.value;
+            var cls = input.value;// romveFunction(input.value);
+            console.log(cls);
+            socket.emit('chat', cls);
+            input.value = '';
+        }
+    });
+
+    socket.on('conversation', function(msg) {
+        console.log("messaged");
+        var item = document.createElement('li');
+        item.textContent = msg;
+        //var textnode = document.createTextNode(msg); 
+        messages.appendChild(item);
+        window.scrollTo(0, document.body.scrollHeight);
+    });
+</script>
+</body>
+</html>

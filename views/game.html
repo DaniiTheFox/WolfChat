@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>
+		Wolf.Chat - Beta
+	</title>
+
+	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+	<audio id="myAudio">
+		<source src="/resources/music/calm1.mp3" type="audio/mpeg">
+	</audio>
+
+	<!--Scoket.io-->
+	<script src="public/js/socket.io.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<!--Client Side CSS-->
+	<link rel="stylesheet" href="public/css/client.css" />
+	<link rel="icon" type="image/x-icon" href="../res/favicon.png">
+</head>
+<body>
+
+<!-- WebGL context -->
+<div id="gl_context"></div>
+
+<!-- Client side JS bundle -->
+ <script type="module" src="src/client.js"></script>
+ <iframe src="./chat.html" style="position: absolute; bottom: 0px; left: 0px; width: 100%; height:20%">
+ </iframe>
+ <button onclick="pauseAudio()" type="button" id="mute" style="position: absolute; top: 5px; right: 15px;">Mute</button> 
+ <script>
+	var x = document.getElementById("myAudio"); 
+	let p = true;
+
+	function playAudio() { 
+	  x.play(); 
+	} 
+	
+	function pauseAudio() { 
+	  x.pause(); 
+	  p = false;
+	} 
+
+	
+	function play_music() {
+		let rx = Math.random() * 100;
+		if(rx > 90 && p == true){
+			playAudio();
+		}
+	}
+	setInterval(play_music, 5000);
+  </script>
+</body>
+</html>

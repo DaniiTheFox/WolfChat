@@ -1,0 +1,12 @@
+{
+    "mapname": "Main Land",
+    "Description": "The syntax for the worldmap is: <item id> <x> <y> <z> please read the HOWTO.md to learn more!",
+    "can_build": 0,
+    "worldmap": [
+        1,  5,  0,  0,
+        1,  0,  0,  5,
+        1,  0,  0, -5,
+        1, -5,  0,  0,
+        2,  1,  0,  1
+    ]
+}

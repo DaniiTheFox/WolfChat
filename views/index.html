@@ -1,0 +1,203 @@
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>WolfChat Client</title>
+  <link rel="stylesheet" href="../public/css/menu.css">
+  <link rel="icon" type="image/x-icon" href="../res/favicon.png">
+  <style>
+    .main {
+      font-family: Cursive;
+      text-align: left;
+      text-justify: inter-word;
+      margin-right: 30%;
+      margin-left: 30%;
+    }
+   
+    .main h3{
+      color: #ffbe3c;
+    }
+   
+    .main h1{
+      color: #c77aff;
+    }
+   
+    .main h5{
+      color: #ff788b;
+    }
+    /* . . . THE CANVAS MAIN PREVIEW . . .*/
+    .preview{
+     border-style: solid;
+     border: 1px;
+     border-radius: 2%; 
+     background-color: #9d68bb;
+     margin-left: 5%;
+     margin-right: 5%;
+     width: 70%;
+     height: 40%;
+    }
+    /* . . . THE FIRST MAIN BUTTON . . . */
+    .button{
+     border: 2px;
+     border-style: solid;
+     border-radius: 2%; 
+     background-color: #5105a8;
+     border-color: #3a0479;
+     margin-left:  15%;
+     margin-right: 15%;
+     font-size: 17px;
+    }
+    
+    .button:hover{
+     background-color: #140033;
+    }
+
+    .button a{
+     color: #ffffff;
+    }
+    /*....................................*/
+    /* . . . THE SECOND BUTTON . . . */
+    .button1{
+     border: 2px;
+     border-style: solid;
+     border-radius: 2%; 
+     background-color: #00be5f;
+     border-color: #00ff40;
+     margin-left:  15%;
+     margin-right: 15%;
+     font-size: 17px;
+    }
+    
+    .button1:hover{
+     background-color: #009776;
+    }
+
+    .button1 a{
+     color: #ffffff;
+    }
+    
+    /* . . . THE PLAY BUTTON . . . */
+    .playbutton{
+      border: 2px;
+     border-style: solid;
+     border-radius: 2%; 
+     background-color: #008a00;
+     border-color: #00ff40;
+     margin-left:  15%;
+     margin-right: 15%;
+     font-size: 17px;
+    }
+    
+    .playbutton:hover{
+     background-color: #086400;
+    }
+
+    .playbutton a{
+     color: #ffffff;
+    }
+    
+    .main button{
+     background-color: transparent;
+     border: 0px;
+     color: #ffffff;
+     font-family: Cursive;
+     font-size: 17px;
+    }
+    /*.... TEXT BOX DESIGN GOES HERE ....*/
+    .setname{
+     background-color: #000000;
+     color: #A0A0A0;
+     border: 1px;
+     border-color: #9c9c9c;
+     margin-left: 10%;
+     margin-right: 10%;
+     font-size: 20px;
+     border-radius: 2%; 
+     width: 70%;
+     height: 5%;
+     margin-bottom: 0%;
+    }
+    /*.................................*/
+  </style>
+ </head>
+ <body>
+  <!-- THIS IS THE WEBSITE HEADER -->
+  <div class="top_bar">
+   <!--img src="res/logo.png" width=226px height=48px /img -->
+   <a href="https://www.reddit.com/r/OpenHorse/">Forums</a>
+   <a href="https://github.com/boniikawaiidesu/OpenHorse">Source code</a>
+   <a href="https://discord.gg/ckx7MTKheU">Support</a>
+   <a href="aboutus.php">About us</a>
+  </div>
+  <!-- CONTENT OF THE WEBSITE GOES HERE -->
+  <div class="main"> 
+   <center>
+    <img src="../res/logo.png" style="height:20%;width:110%;margin-left:-5%;"></img>
+    <br><br>
+    <!-- USE IT AS A TEMPLATE FOR THE BUTTONS -->
+    <!-- THIS IS THE CUSTOM SERVER BUTTON -->
+    <div class="button">
+     <a href="https://github.com/boniikawaiidesu/OpenHorse">
+      <img src="../res/buttons/cust_server.png" style="width:32px;height:32px;vertical-align: middle"></img>
+      Create a Custom Server!
+     </a>
+    </div>
+    <br>
+    <!-- ................................ -->
+    <!-- THIS IS THE MAIN SERVER BUTTON -->
+    <div class="button1">
+     <a href="#">
+      <img src="../res/buttons/main_server.png" style="width:32px;height:32px;vertical-align: middle"></img>
+      Teleport Main Server!
+     </a>
+    </div>
+    <!-- ...... INITIALIZING THE FORM FOR WOLF INPUT .. -->
+    <form action="game.html">
+    <!-- ...... THIS IS THE WOLF EDITOR SEGMENT ..... -->
+     <br>
+     <!-- GIVE A NAME TO YOUR WOLF -->
+     <input class="setname" type="text" value="insert your username here!"
+      id="WOLFname" name="WOLFname"><br>
+     <!-- WOLF DRAWING PREVIEW -->
+     <!-- WOLF PREVIEW RESOURCES LOADING -->
+      <img src="../resources/default.png" id="WOLFBody" hidden></img>
+     <!-- .............................. -->
+     <canvas class="preview" id="WOLFEdit"></canvas>
+     <!-- .................... -->
+     <br>
+     <small><p style="color:#8f66a9">Notice, that this game is still in development
+     errors might appear!</p></small>
+     
+    <!-- ............................................ -->
+    <!-- THIS IS THE MAIN SERVER BUTTON -->
+    <div class="playbutton">
+     <button>
+      <img src="../res/buttons/play_button.png" style="width:32px;height:32px;vertical-align: middle"></img>
+      <a>Play in Server!</a>
+     </button>
+    </div>
+    <br>
+    <!-- RULES FROM THE SERVER -->
+    <h3>Server Rules [!]</h3>
+    <p>
+     <ul style="text-align:left;">
+      <br><li>Be kind to other users</li>
+      <br><li>Do not use scripts or hacks</li>
+      <br><li>Ask before joining other people RP</li>
+      <br><li>Do not encourage breaking the rules</li>
+      <br><li>Read terms of use in case you make a new server</li>
+     </ul>
+    </p> 
+    <br>
+    <h5>Breaking the rules might result in permanent or temporal ban</h5>
+    <!-- ................................ -->
+   </center>
+  </div>
+  <!-- THIS IS THE WEBSITE FOOTER -->
+  <div class="bottom_bar">
+   <hr>
+   <center><p style="color:#8f66a9">Wolf Chat online - 2024 By: BoniiKwiiDz</p></center>
+   <center><p style="color:#8f66a9">Version <b>0.1.12</b> 
+   <u><a style="color:#8f66a9" href="changes.php">changelog</a></u></p></center>
+  </div>
+ </body>
+</html>

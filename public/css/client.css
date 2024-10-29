@@ -1,0 +1,44 @@
+body{
+  font-family: cursive;
+  padding: 0 !important;
+  margin: auto !important;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.dashboard{
+  text-align: center;
+  font-size: 10pt;
+  color: gray;
+}
+#gui_overlays{
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  font-size: 20pt;
+  color: white;
+}
+#information{
+  position: absolute;
+  top: 20px; right: 20px;
+}
+#contribute{
+  position: absolute;
+  top: 65px; right: 20px;
+}
+
+.gl_context {
+  z-index: -1;
+  position: absolute;
+  top:0; 
+  left:0;
+}
+
+button { 
+  background: #333; 
+  border: none; 
+  padding: 0 1rem; 
+  margin: 0.25rem; 
+  border-radius: 3px; 
+  outline: none; 
+  color: #fff; 
+}
