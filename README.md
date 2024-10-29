@@ -1,4 +1,4 @@
-# A game about wolvwes :D
+# A game about wolves :D
 
 So... as pony town became closed source and custom servers are not allowed anymore
 I decided to make this alternative version with wolves owo, So anyone can create a game
